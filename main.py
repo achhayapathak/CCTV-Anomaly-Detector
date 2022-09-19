@@ -78,9 +78,9 @@ def main():
     # Function call to predict anomaly
     prediction = predict_anomaly(video)
     
-    if(prediction == -1)
+    if(prediction == -1):
         st.write("Please enter a video of length 10 second to 1 minute")
-    else
+    else:
     # Display the output
         if(st.button('Predict')):
             if(prediction):
