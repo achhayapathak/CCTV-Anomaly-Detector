@@ -14,6 +14,7 @@ def predict_anomaly(video):
     total_frames =  int (video.get(cv2.CAP_PROP_FRAME_COUNT))
     
     if total_frames<150 or total_frames>1000:
+        print(total_frames)
         return -1
     
     x = [] 
