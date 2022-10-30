@@ -84,13 +84,13 @@ def main():
 #         st.write("Please enter a video of length 10 second to 1 minute")
 #     else:
     # Display the output
-        if(st.button('Predict')):
-            if(prediction == 1):
-                st.error("Anomaly Detected!!")
-            else if(prediction == 0):
-                st.success("Normal Video")
-            else:
-                st.write(prediction)
+    if(st.button('Predict')):
+        if(prediction == 1):
+            st.error("Anomaly Detected!!")
+        else if(prediction == 0):
+            st.success("Normal Video")
+        else:
+            st.write(prediction)
 
     file.close()
 
