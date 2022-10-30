@@ -87,7 +87,7 @@ def main():
     if(st.button('Predict')):
         if(prediction == 1):
             st.error("Anomaly Detected!!")
-        else if(prediction == 0):
+        elif(prediction == 0):
             st.success("Normal Video")
         else:
             st.write(prediction)
