@@ -15,7 +15,7 @@ def predict_anomaly(video):
 #     st.write(total_frames)
     
     
-    if total_frames<150 or total_frames>1000:
+    if total_frames<150 or total_frames>1500:
         return total_frames
     
     x = [] 
@@ -90,7 +90,7 @@ def main():
         elif(prediction == 0):
             st.success("Normal Video")
         else:
-            st.write(prediction)
+            st.write("Please enter a video of length 10 second to 1 minute")
 
     file.close()
 
