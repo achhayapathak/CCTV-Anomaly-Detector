@@ -90,7 +90,7 @@ def main():
             else if(prediction == 0):
                 st.success("Normal Video")
             else:
-                st.write("Please enter a video of length 10 second to 1 minute", prediction)
+                st.write(prediction)
 
     file.close()
 
