@@ -12,10 +12,11 @@ def predict_anomaly(video):
     
     #Calculating Frames
     total_frames =  int (video.get(cv2.CAP_PROP_FRAME_COUNT))
+#     st.write(total_frames)
+    
     
     if total_frames<150 or total_frames>1000:
-        st.write(total_frames)
-        return -1
+        return total_frames
     
     x = [] 
 
@@ -79,15 +80,17 @@ def main():
     # Function call to predict anomaly
     prediction = predict_anomaly(video)
     
-    if(prediction == -1):
-        st.write("Please enter a video of length 10 second to 1 minute")
-    else:
+#     if(prediction == -1):
+#         st.write("Please enter a video of length 10 second to 1 minute")
+#     else:
     # Display the output
         if(st.button('Predict')):
-            if(prediction):
+            if(prediction == 1):
                 st.error("Anomaly Detected!!")
-            else:
+            else if(prediction == 0):
                 st.success("Normal Video")
+            else:
+                st.write("Please enter a video of length 10 second to 1 minute", prediction)
 
     file.close()
 
