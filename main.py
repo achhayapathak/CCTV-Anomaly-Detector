@@ -15,12 +15,15 @@ def predict_anomaly(video):
 #     st.write(total_frames)
     
     
-    if total_frames<150 or total_frames>1500:
-        return total_frames
+    if total_frames<150 or total_frames>1800:
+        return -1
     
     x = [] 
 
+    temp_video = video
+
     for i in range(1,total_frames//150 +1):
+        video = temp_video
         success,image = video.read()
 
         count=1
@@ -79,10 +82,7 @@ def main():
 
     # Function call to predict anomaly
     prediction = predict_anomaly(video)
-    
-#     if(prediction == -1):
-#         st.write("Please enter a video of length 10 second to 1 minute")
-#     else:
+
     # Display the output
     if(st.button('Predict')):
         if(prediction == 1):
